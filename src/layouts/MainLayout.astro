@@ -11,6 +11,13 @@ import LanguageSelector from '../components/LanguageSelector.jsx';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stadium Meta</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7769647768079889" crossorigin="anonymous"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-7769647768079889",
+              enable_page_level_ads: true
+         });
+    </script>
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/css/navigation.css" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Bebas+Neue&family=Montserrat:wght@900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -29,6 +36,61 @@ import LanguageSelector from '../components/LanguageSelector.jsx';
         overflow-x: hidden;
         margin: 0;
         padding: 0;
+      }
+
+      /* Styles de base */
+      .container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      /* Styles pour mobile */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 0.5rem;
+        }
+
+        .site-title {
+          font-size: 1.8rem !important;
+          transform: translate(-50%, -50%) !important;
+          white-space: normal !important;
+          text-align: center;
+          width: auto !important;
+        }
+
+        .site-title img {
+          width: 28px !important;
+          height: 28px !important;
+        }
+
+        .nav-left, .nav-right {
+          position: relative !important;
+          transform: none !important;
+          padding: 0.5rem !important;
+        }
+
+        header {
+          height: auto !important;
+          min-height: 60px;
+          flex-direction: column;
+          padding: 0.5rem 0;
+        }
+
+        .header-inner {
+          flex-direction: column;
+          padding: 0 1rem !important;
+          gap: 0.5rem;
+        }
+
+        main {
+          padding: 1rem 0;
+        }
+
+        .sidebar-ad {
+          display: none; /* Cacher les sidebars sur mobile */
+        }
       }
 
       header {
@@ -125,26 +187,57 @@ import LanguageSelector from '../components/LanguageSelector.jsx';
         box-shadow: 0 2px 16px #2196F399, 0 1px 8px #FFA00055;
         opacity: 0.95;
       }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+      }
+
+      @media (max-width: 768px) {
+        .nav-container {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .header-inner {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 1rem;
+        }
+
+        .site-title {
+          position: relative;
+          transform: none !important;
+          left: auto;
+          top: auto;
+          margin-bottom: 1rem;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="sidebar-ad left">
-      <div class="ad-placeholder">Publicité</div>
+      <!-- Les annonces seront placées automatiquement ici -->
     </div>
     
     <header>
       <div class="header-inner">
-        <div class="nav-left">
-          <Navigation client:only="react" />
-        </div>
         <a href="/" class="site-title">
           STADIUM
           <img src="/logo-meta.svg" alt="Logo Stadium Meta" />
           META
         </a>
-        <div class="nav-right">
-          <LanguageSelector client:only="react" />
-          <a href="/login" class="login-link">LOGIN</a>
+        <div class="nav-container">
+          <div class="nav-left">
+            <Navigation client:only="react" />
+          </div>
+          <div class="nav-right">
+            <LanguageSelector client:only="react" />
+            <a href="/login" class="login-link">LOGIN</a>
+          </div>
         </div>
       </div>
       <div class="header-glow"></div>
@@ -158,7 +251,7 @@ import LanguageSelector from '../components/LanguageSelector.jsx';
     </main>
 
     <div class="sidebar-ad right">
-      <div class="ad-placeholder">Publicité</div>
+      <!-- Les annonces seront placées automatiquement ici -->
     </div>
 
     <footer class="footer">
