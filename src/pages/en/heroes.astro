@@ -16,30 +16,19 @@ import MainLayout from '../../layouts/MainLayout.astro';
   <div class="container" style="margin-top: 0; padding-top: 0;">
     <main style="margin-top: 0; padding-top: 0;">
       <div class="category-links" style="margin-top: 0;">
-        <a href="/en/tank" class="category-link tank-link" onclick="playUIClick()">
+        <a href="/en/tank" class="category-link tank-link">
           <img src="/images/ICONES_ROLES/Dark_Circle_Tank.png" alt="Tanks" class="role-logo"/>
           TANKS
         </a>
-        <a href="/en/damage" class="category-link damage-link" onclick="playUIClick()">
+        <a href="/en/damage" class="category-link damage-link">
           <img src="/images/ICONES_ROLES/Dark_Circle_Damage.png" alt="Damage" class="role-logo"/>
           DAMAGE
         </a>
-        <a href="/en/support" class="category-link support-link" onclick="playUIClick()">
+        <a href="/en/support" class="category-link support-link">
           <img src="/images/ICONES_ROLES/Dark_Circle_Support.png" alt="Support" class="role-logo"/>
           SUPPORT
         </a>
       </div>
-      <audio id="uiClickSound" src="/sounds/ui_click.mp3" preload="auto"></audio>
-      <script>
-        function playUIClick() {
-          const audio = document.getElementById('uiClickSound') as HTMLAudioElement;
-          if(audio) {
-            audio.currentTime = 0;
-            audio.volume = 0.19;
-            audio.play();
-          }
-        }
-      </script>
     </main>
   </div>
   <style>
