@@ -78,10 +78,25 @@ export function useTranslations() {
       
       // Rediriger vers la bonne URL
       const currentPath = window.location.pathname;
-      if (newLang === 'en' && !currentPath.startsWith('/en/')) {
-        window.location.href = `/en${currentPath.replace('/fr/', '/')}`;
-      } else if (newLang === 'fr' && !currentPath.startsWith('/fr/')) {
-        window.location.href = `/fr${currentPath.replace('/en/', '/')}`;
+      
+      // Si on est à la racine
+      if (currentPath === '/' || currentPath === '/fr' || currentPath === '/en') {
+        window.location.href = newLang === 'fr' ? '/fr' : '/en';
+        return;
+      }
+
+      if (newLang === 'en') {
+        if (currentPath.startsWith('/fr/')) {
+          window.location.href = currentPath.replace('/fr/', '/en/');
+        } else if (!currentPath.startsWith('/en/')) {
+          window.location.href = `/en${currentPath}`;
+        }
+      } else if (newLang === 'fr') {
+        if (currentPath.startsWith('/en/')) {
+          window.location.href = currentPath.replace('/en/', '/fr/');
+        } else if (!currentPath.startsWith('/fr/')) {
+          window.location.href = `/fr${currentPath}`;
+        }
       }
     }
     setTranslations(INITIAL_TRANSLATIONS[newLang]);

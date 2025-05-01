@@ -14,12 +14,28 @@ export default function LanguageSelector() {
     if (typeof window === 'undefined') return '/';
     
     const path = window.location.pathname;
+    
+    // Si on est à la racine
+    if (path === '/' || path === '/fr' || path === '/en') {
+      return lang === 'fr' ? '/fr' : '/en';
+    }
+    
     if (lang === 'fr') {
-      // Pour le français, on enlève le préfixe /en/ s'il existe
-      return path.startsWith('/en/') ? path.replace('/en/', '/fr/') : path;
+      // Pour le français
+      if (path.startsWith('/en/')) {
+        return path.replace('/en/', '/fr/');
+      } else if (!path.startsWith('/fr/')) {
+        return `/fr${path}`;
+      }
+      return path;
     } else {
-      // Pour l'anglais, on ajoute le préfixe /en/ s'il n'existe pas déjà
-      return path.startsWith('/en/') ? path : `/en${path.replace('/fr/', '/')}`;
+      // Pour l'anglais
+      if (path.startsWith('/fr/')) {
+        return path.replace('/fr/', '/en/');
+      } else if (!path.startsWith('/en/')) {
+        return `/en${path}`;
+      }
+      return path;
     }
   };
 
