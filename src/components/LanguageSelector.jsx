@@ -16,15 +16,17 @@ export default function LanguageSelector() {
     const path = window.location.pathname;
     if (lang === 'fr') {
       // Pour le français, on enlève le préfixe /en/ s'il existe
-      return path.startsWith('/en/') ? path.replace('/en/', '/') : path;
+      return path.startsWith('/en/') ? path.replace('/en/', '/fr/') : path;
     } else {
       // Pour l'anglais, on ajoute le préfixe /en/ s'il n'existe pas déjà
-      return path.startsWith('/en/') ? path : `/en${path}`;
+      return path.startsWith('/en/') ? path : `/en${path.replace('/fr/', '/')}`;
     }
   };
 
   const handleLanguageChange = (e, lang) => {
     e.preventDefault();
+    const newPath = getPathInLanguage(lang);
+    window.location.href = newPath;
     changeLanguage(lang);
   };
 

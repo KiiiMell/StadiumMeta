@@ -7,7 +7,7 @@ export default function Navigation() {
 
   const getLocalizedHref = (path) => {
     if (typeof window === 'undefined') return path;
-    return currentLanguage === 'en' ? `/en${path}` : path;
+    return currentLanguage === 'en' ? `/en${path}` : `/fr${path}`;
   };
 
   return (

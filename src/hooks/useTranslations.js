@@ -47,6 +47,9 @@ export function useTranslations() {
       if (path.startsWith('/en/')) {
         localStorage.setItem('preferredLanguage', 'en');
         return 'en';
+      } else if (path.startsWith('/fr/')) {
+        localStorage.setItem('preferredLanguage', 'fr');
+        return 'fr';
       }
       // Sinon, utiliser la langue stockée ou la langue par défaut
       return localStorage.getItem('preferredLanguage') || DEFAULT_LANG;
@@ -76,9 +79,9 @@ export function useTranslations() {
       // Rediriger vers la bonne URL
       const currentPath = window.location.pathname;
       if (newLang === 'en' && !currentPath.startsWith('/en/')) {
-        window.location.href = `/en${currentPath}`;
-      } else if (newLang === 'fr' && currentPath.startsWith('/en/')) {
-        window.location.href = currentPath.replace('/en/', '/');
+        window.location.href = `/en${currentPath.replace('/fr/', '/')}`;
+      } else if (newLang === 'fr' && !currentPath.startsWith('/fr/')) {
+        window.location.href = `/fr${currentPath.replace('/en/', '/')}`;
       }
     }
     setTranslations(INITIAL_TRANSLATIONS[newLang]);
