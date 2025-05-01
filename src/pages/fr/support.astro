@@ -1,0 +1,108 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import junoImg from '../../../public/images/PERSO_FULL/juno.png';
+import mercyImg from '../../../public/images/PERSO_FULL/mercy.png';
+import kirikoImg from '../../../public/images/PERSO_FULL/kiriko.png';
+import anaImg from '../../../public/images/PERSO_FULL/ana.png';
+import lucioImg from '../../../public/images/PERSO_FULL/lucio.png';
+import moiraImg from '../../../public/images/PERSO_FULL/moira.png';
+import supportLogo from '../../../public/images/ICONES_ROLES/Dark_Circle_Support.png';
+---
+<MainLayout>
+  <section class="hero-section hero-section-center-flex">
+    <div class="role-title-row">
+      <Image src={supportLogo} alt="Logo Soutien" class="role-logo-sobre" />
+      <span class="role-title-main">SOUTIENS</span>
+    </div>
+  </section>
+  <main class="tank-main-sobre">
+    <div class="tank-hero-grid-sobre">
+      <!-- S Tier -->
+      <div class="tank-hero-card-sobre s">
+        <div class="tank-tier-badge-sobre s">S</div>
+        <Image src={junoImg} alt="Juno" class="tank-hero-full-sobre" width={54} height={54} />
+        <div class="tank-hero-info-sobre">
+          <div class="tank-hero-name-sobre">Juno</div>
+          <div class="tank-hero-role-sobre">Soutien</div>
+          <a href="/fr/builds/juno" class="tank-hero-btn-sobre"><span class="btn-details-text">Détails du build</span></a>
+        </div>
+      </div>
+      <div class="tank-hero-card-sobre s">
+        <div class="tank-tier-badge-sobre s">S</div>
+        <Image src={mercyImg} alt="Mercy" class="tank-hero-full-sobre" width={54} height={54} />
+        <div class="tank-hero-info-sobre">
+          <div class="tank-hero-name-sobre">ANGE</div>
+          <div class="tank-hero-role-sobre">Soutien</div>
+          <a href="/fr/builds/mercy" class="tank-hero-btn-sobre"><span class="btn-details-text">Détails du build</span></a>
+        </div>
+      </div>
+      <!-- A Tier -->
+      <div class="tank-hero-card-sobre a">
+        <div class="tank-tier-badge-sobre a">A</div>
+        <Image src={kirikoImg} alt="Kiriko" class="tank-hero-full-sobre" width={54} height={54} />
+        <div class="tank-hero-info-sobre">
+          <div class="tank-hero-name-sobre">Kiriko</div>
+          <div class="tank-hero-role-sobre">Soutien</div>
+          <a href="/fr/builds/kiriko" class="tank-hero-btn-sobre"><span class="btn-details-text">Détails du build</span></a>
+        </div>
+      </div>
+      <div class="tank-hero-card-sobre a">
+        <div class="tank-tier-badge-sobre a">A</div>
+        <Image src={anaImg} alt="Ana" class="tank-hero-full-sobre" width={54} height={54} />
+        <div class="tank-hero-info-sobre">
+          <div class="tank-hero-name-sobre">Ana</div>
+          <div class="tank-hero-role-sobre">Soutien</div>
+          <a href="/fr/builds/ana" class="tank-hero-btn-sobre"><span class="btn-details-text">Détails du build</span></a>
+        </div>
+      </div>
+      <!-- B Tier -->
+      <div class="tank-hero-card-sobre b">
+        <div class="tank-tier-badge-sobre b">B</div>
+        <Image src={lucioImg} alt="Lucio" class="tank-hero-full-sobre" width={54} height={54} />
+        <div class="tank-hero-info-sobre">
+          <div class="tank-hero-name-sobre">LUCIO</div>
+          <div class="tank-hero-role-sobre">Soutien</div>
+          <a href="/fr/builds/lucio" class="tank-hero-btn-sobre"><span class="btn-details-text">Détails du build</span></a>
+        </div>
+      </div>
+      <div class="tank-hero-card-sobre b">
+        <div class="tank-tier-badge-sobre b">B</div>
+        <Image src={moiraImg} alt="Moira" class="tank-hero-full-sobre" width={54} height={54} />
+        <div class="tank-hero-info-sobre">
+          <div class="tank-hero-name-sobre">Moira</div>
+          <div class="tank-hero-role-sobre">Soutien</div>
+          <a href="/fr/builds/moira" class="tank-hero-btn-sobre"><span class="btn-details-text">Détails du build</span></a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&display=swap');
+    html, body {
+      background: linear-gradient(135deg, #131a24 60%, #23272a 100%) !important;
+      color: #fff;
+      font-family: 'Open Sans', Arial, sans-serif;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    .tank-main-sobre {
+      background: none !important;
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+    }
+    .tank-hero-grid-sobre {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 24px 16px;
+      justify-items: center;
+      align-items: stretch;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      padding-bottom: 20px;
+    }
+    // ... existing code ...
+  </style>
+</MainLayout> 
