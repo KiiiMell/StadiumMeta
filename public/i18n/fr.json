@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "heroes": "Héros Méta",
+    "compositions": "Compositions",
+    "builds": "Builds & Perks",
+    "tips": "Conseils",
+    "propose_build": "Proposer un build",
+    "community_builds": "Builds communautaires"
+  },
+  "home": {
+    "welcome": "BIENVENUE SUR STADIUM META",
+    "discover": "Découvrez le nouveau mode Stadium",
+    "description": "Un mode compétitif unique où chaque round compte, avec des builds personnalisés, des perks stratégiques et une gestion du Stadium Cash pour dominer l'arène.",
+    "cta_button": "DÉCOUVRIR LES HÉROS MÉTA"
+  },
+  "roles": {
+    "tank": "TANKS",
+    "damage": "DÉGÂTS",
+    "support": "SOUTIEN"
+  },
+  "footer": {
+    "created_for": "Créé pour les fans d'Overwatch 2",
+    "follow_us": "Suivez-nous"
+  }
+} 

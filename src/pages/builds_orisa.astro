@@ -1,0 +1,292 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+// Table de correspondance pour les pouvoirs et objets Orisa
+const orisaPowers = [
+  { img: "/images/PERKS/ORISA/PUISSANCE/SURCHARGEUR.png" },
+  { img: "/images/PERKS/ORISA/PUISSANCE/LANCER_ROBOTIQUE.png" },
+  { img: "/images/PERKS/ORISA/PUISSANCE/MISE_A_JOUR_TOURNOYANTE.png" },
+  { img: "/images/PERKS/ORISA/PUISSANCE/CHARGE_CENTRIPETE.png" }
+];
+const orisaItems = [
+  { img: "/images/PERKS/ORISA/CAPACITE/EPIQUE/ARSENAL_HEROIQUE.png" },
+  { img: "/images/PERKS/ORISA/SURVIE/EPIQUE/CHAMP_REDUCTEUR_D'OGUNDIMU.png" },
+  { img: "/images/PERKS/ORISA/ARME/EPIQUE/PROPULSEUR_A_REACTION.png" },
+  { img: "/images/PERKS/ORISA/SURVIE/EPIQUE/FLUX_FANTOME.png" },
+  { img: "/images/PERKS/ORISA/CAPACITE/EPIQUE/THEOREME_D'EFI.png" },
+  { img: "/images/PERKS/ORISA/CAPACITE/RARE/JAVELOT_EN_ARC.png" }
+];
+---
+
+<MainLayout>
+  <section class="hero-section hero-section-center-flex">
+    <div class="build-title-row">
+      <img src="/images/ICONES_PERSO/Icon-Orisa.png" alt="Orisa" class="build-logo-orisa" />
+      <span class="build-title-main">Build Orisa</span>
+    </div>
+  </section>
+  <main class="dva-build-main-small">
+    <div class="dva-build-center">
+      <!-- Premier build Orisa -->
+      <section class="dva-build-block">
+        <!-- Les boutons perks côte à côte -->
+        <div class="dva-build-cards">
+          <div class="dva-group-card">
+            <div class="dva-group-title dva-group-title-hover">
+              Pouvoirs (4/4)
+              <div class="dva-perks-popup">
+                <div class="dva-perks-row">
+                  {orisaPowers.map(power => (
+                    <div class="perk-mini">
+                      <img src={power.img} alt={power.img} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dva-group-card">
+            <div class="dva-group-title dva-group-title-hover">
+              Objets (6/6)
+              <div class="dva-perks-popup">
+                <div class="dva-perks-row">
+                  {orisaItems.map(item => (
+                    <div class="perk-mini">
+                      <img src={item.img} alt={item.img} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Ici tu pourras ajouter d'autres builds Orisa si besoin -->
+    </div>
+  </main>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&display=swap');
+    .build-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 32px 0 8px 0;
+      gap: 12px;
+    }
+    .build-logo-orisa {
+      width: 38px;
+      height: 38px;
+      filter: drop-shadow(0 0 6px #2196F3aa) drop-shadow(0 0 8px #FFA00088);
+      vertical-align: middle;
+    }
+    .build-title-main {
+      font-size: 2rem;
+      font-family: 'Bebas Neue', Arial, sans-serif;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #FFA000 !important;
+      text-shadow: 0 2px 10px #2196F399, 0 0px 14px #FFA00077;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0 4px;
+      line-height: 1;
+      display: inline-block;
+    }
+    .build-title-secondary {
+      display: block;
+      text-align: center;
+      font-size: 1.05rem;
+      color: #ffcc80;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-top: 2px;
+      text-shadow: 0 1px 6px #2196F355;
+      text-transform: uppercase;
+    }
+    .dva-build-main-small {
+      background: #161d26;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 2.5rem;
+    }
+    .dva-build-center {
+      width: 650px;
+      max-width: 98vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .dva-build-block {
+      width: 100%;
+      background: none;
+      margin-bottom: 170px;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px #00eaff11;
+      padding-bottom: 0.5rem;
+      min-width: 0;
+      overflow: visible;
+      position: relative;
+    }
+    .dva-build-header-small {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+    .dva-avatar-small {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #00eaff77;
+      border: 2px solid #00eaff;
+      background: #111a;
+    }
+    .dva-title-small {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.1rem;
+      letter-spacing: 1px;
+    }
+    .dva-title-small span {
+      color: #00eaff;
+      font-size: 1.07rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .dva-desc-small {
+      color: #b3c6e0;
+      font-size: 0.97rem;
+      margin-top: 0.1rem;
+    }
+    .dva-build-cards {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 1.1rem;
+      justify-content: center;
+      min-width: 0;
+      overflow: visible;
+      position: relative;
+    }
+    .dva-group-card {
+      background: #232b36;
+      border-radius: 14px;
+      box-shadow: 0 2px 10px #00eaff33;
+      padding: 0.8rem 0.6rem 0.7rem 0.6rem;
+      width: 280px;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1.5px solid #3cefff33;
+      position: relative;
+      justify-content: center;
+      min-height: 48px;
+      margin: 0;
+      overflow: visible;
+    }
+    .dva-group-title {
+      flex: 1;
+      text-align: center;
+    }
+    .dva-group-title-hover .dva-perks-popup {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 120%;
+      transform: translateX(-50%);
+      z-index: 10;
+      background: #232b36;
+      border: 1.5px solid #3cefff99;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px #00eaff33;
+      padding: 0.7rem 0.7rem 0.5rem 0.7rem;
+      min-width: 240px;
+      animation: fadeIn 0.2s;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .dva-group-title-hover:hover .dva-perks-popup {
+      display: flex;
+    }
+    .dva-perks-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      justify-content: center;
+      flex-direction: row;
+    }
+    .perk-mini {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 62px;
+      gap: 0.18rem;
+    }
+    .perk-mini img {
+      width: 48px;
+      height: 48px;
+      padding: 6px;
+      object-fit: contain;
+      background: transparent;
+      box-sizing: content-box;
+      display: block;
+    }
+    .perk-mini span {
+      color: #fff;
+      font-size: 0.74rem;
+      text-align: center;
+      line-height: 1.1;
+      max-width: 60px;
+      word-break: break-word;
+    }
+    @media (max-width: 900px) {
+      .dva-build-center {
+        width: 99vw;
+        max-width: 99vw;
+      }
+      .dva-group-card {
+        width: 99vw;
+        min-width: unset;
+      }
+      .dva-build-block {
+        margin-bottom: 110px;
+      }
+    }
+    @media (max-width: 650px) {
+      .dva-build-cards {
+        flex-direction: column;
+        gap: 0.7rem;
+        align-items: center;
+      }
+      .dva-group-card {
+        width: 99vw;
+        min-width: unset;
+      }
+      .dva-build-block {
+        margin-bottom: 50px;
+      }
+    }
+  </style>
+  <style>
+    /* Harmonisation stricte de la grille esport */
+    .dva-perks-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      justify-items: center;
+    }
+    .dva-group-card:last-child .dva-perks-row {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  </style>
+
+</MainLayout>

@@ -1,0 +1,206 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+<MainLayout>
+  <section class="hero-section hero-section-center-flex">
+    <div class="hero-title-3-block">
+      <div class="hero-title-3-underline"></div>
+      <div class="hero-title-3-center-wrap">
+        <h1 class="hero-title hero-title-3">
+          <span class="split-left">META HEROES</span>
+        </h1>
+      </div>
+      <div class="hero-title-3-underline hero-title-3-underline-bottom"></div>
+    </div>
+  </section>
+  <div class="container" style="margin-top: 0; padding-top: 0;">
+    <main style="margin-top: 0; padding-top: 0;">
+      <div class="category-links" style="margin-top: 0;">
+        <a href="/en/tank" class="category-link tank-link" onclick="playUIClick()">
+          <img src="/images/ICONES_ROLES/Dark_Circle_Tank.png" alt="Tanks" class="role-logo"/>
+          TANKS
+        </a>
+        <a href="/en/damage" class="category-link damage-link" onclick="playUIClick()">
+          <img src="/images/ICONES_ROLES/Dark_Circle_Damage.png" alt="Damage" class="role-logo"/>
+          DAMAGE
+        </a>
+        <a href="/en/support" class="category-link support-link" onclick="playUIClick()">
+          <img src="/images/ICONES_ROLES/Dark_Circle_Support.png" alt="Support" class="role-logo"/>
+          SUPPORT
+        </a>
+      </div>
+      <audio id="uiClickSound" src="/sounds/ui_click.mp3" preload="auto"></audio>
+      <script>
+        function playUIClick() {
+          const audio = document.getElementById('uiClickSound') as HTMLAudioElement;
+          if(audio) {
+            audio.currentTime = 0;
+            audio.volume = 0.19;
+            audio.play();
+          }
+        }
+      </script>
+    </main>
+  </div>
+  <style>
+    .hero-section-center-flex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 240px;
+      min-height: 0;
+      margin: 0;
+      padding: 24px 0 24px 0;
+      box-sizing: border-box;
+      background: none;
+    }
+    .hero-title-3-block {
+      margin: 0 auto 24px auto;
+      width: fit-content;
+      text-align: center;
+    }
+    .hero-title-3-underline {
+      margin: 0 auto 2px auto !important;
+      width: 320px;
+      max-width: 90vw;
+      height: 7px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #2196F3 0%, #fff 13%, #FFA000 50%, #fff 87%, #2196F3 100%);
+      box-shadow: 0 0 20px 4px #2196F3cc, 0 0 20px 8px #FFA00066;
+      opacity: 1;
+    }
+    .hero-title-3-underline-bottom {
+      margin: 2px auto 0 auto !important;
+    }
+    .hero-title-3-center-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 2px !important;
+    }
+    .hero-title.hero-title-3 {
+      font-size: 2.1rem;
+      font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #FFA000;
+      text-shadow: 0 2px 14px #2196F3cc, 0 0px 18px #FFA00099, 0 0 0.5px #2196F3;
+      margin: 0 8px;
+      text-transform: uppercase;
+    }
+    .split-left, .split-right {
+      color: #FFA000;
+      -webkit-text-fill-color: #FFA000;
+      -webkit-background-clip: border-box;
+      background-clip: border-box;
+    }
+    .split-left {
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+    .split-right {
+      font-weight: 900;
+      letter-spacing: 2.5px;
+      margin-left: 10px;
+    }
+    .category-links {
+      display: flex;
+      gap: 36px;
+      justify-content: center;
+      margin: 0 auto 0 auto;
+      flex-wrap: wrap;
+    }
+    .container {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    main {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    .category-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(120deg, #181c22cc 60%, #23272Aee 100%);
+      border-radius: 22px;
+      border: 3.5px solid #2196F3;
+      box-shadow: 0 0 24px 6px #2196F399, 0 0 60px 12px #FFA00044;
+      padding: 32px 44px 28px 44px;
+      min-width: 200px;
+      min-height: 160px;
+      transition: box-shadow 0.23s, border 0.23s, background 0.23s, transform 0.18s;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      cursor: pointer;
+      outline: none;
+      z-index: 1;
+    }
+    .category-link::before {
+      content: '';
+      position: absolute;
+      left: -60%;
+      top: 0;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent 0%, #fff9 45%, #FFD700cc 55%, transparent 100%);
+      opacity: 0.11;
+      filter: blur(3px);
+      transition: opacity 0.18s;
+      pointer-events: none;
+    }
+    .category-link:hover, .category-link:focus {
+      border: 3.5px solid #FFA000;
+      box-shadow: 0 0 60px 18px #2196F3cc, 0 0 80px 32px #FFA00099;
+      background: linear-gradient(120deg, #23272A 60%, #181c22 100%);
+      color: #FFA000;
+      transform: translateY(-7px) scale(1.06);
+      transition: box-shadow 0.22s, border 0.22s, background 0.22s, color 0.22s, transform 0.18s;
+    }
+    .category-link:hover::before, .category-link:focus::before {
+      opacity: 0;
+      animation: none;
+    }
+    .category-link .role-logo {
+      width: 54px;
+      height: 54px;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 0 18px #2196F3cc) drop-shadow(0 0 12px #FFA00099);
+      transition: filter 0.18s, transform 0.18s;
+    }
+    .category-link:hover .role-logo, .category-link:focus .role-logo {
+      filter: drop-shadow(0 0 36px #FFA000cc) drop-shadow(0 0 24px #2196F3bb);
+      transform: scale(1.14) rotate(-3deg);
+    }
+    .tank-link {
+      box-shadow: 0 0 36px 8px #2196F3cc, 0 0 0 0 #FFA00000;
+    }
+    .damage-link {
+      box-shadow: 0 0 36px 8px #FFA000cc, 0 0 0 0 #2196F300;
+    }
+    .support-link {
+      box-shadow: 0 0 36px 8px #00eaffcc, 0 0 0 0 #FFA00000;
+    }
+    @media (max-width: 900px) {
+      .category-links {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+      }
+      .category-link {
+        padding: 24px 32px 20px 32px;
+        min-width: 180px;
+      }
+    }
+  </style>
+</MainLayout> 

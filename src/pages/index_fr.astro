@@ -1,0 +1,149 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout>
+  <!-- Ajout d'un fond élégant et amélioration de la structure responsive -->
+  <div class="min-h-screen bg-gradient-to-br from-[#181c22] via-[#23272A] to-[#1a232e] text-[#D8D8D8] font-['Inter']">
+    <!-- Import des polices et CSS nécessaires -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Layout principal corrigé : grille responsive, sidebar cachée sur mobile, contenu max-w-4xl -->
+    <main class="container mx-auto px-4 py-12">
+      <div class="flex flex-col lg:flex-row gap-10">
+        <div class="w-full max-w-4xl mx-auto">
+          <!-- Introduction -->
+          <section class="mb-16 text-center">
+            <h2 class="text-4xl font-['Bebas_Neue'] text-[#FFA000] neon-text mb-4 section-title">DOMINEZ LE MODE STADIUM</h2>
+            <p class="text-[#D8D8D8] max-w-2xl mx-auto text-lg">
+              Le mode Stadium d'Overwatch 2 est un 5v5 compétitif où chaque round compte. Gagnez du Stadium Cash pour acheter des Powers et Items, et adaptez vos builds pour écraser vos adversaires. Plongez dans l’arène !
+            </p>
+            <a href="/heroes_fr" class="mt-6 inline-block btn-orange text-[#23272A] px-6 py-3 rounded-md font-['Bebas_Neue'] text-lg">DÉCOUVRIR LES HÉROS MÉTA</a>
+          </section>
+
+          <!-- Catégories -->
+          <section id="categories" class="mb-16">
+            <h2 class="text-3xl font-['Bebas_Neue'] text-[#FFA000] neon-text mb-8 text-center section-title">CATÉGORIES</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div class="card-bg rounded-xl p-6 shadow-lg hover:neon-glow transition duration-300 text-center">
+                <h3 class="text-xl font-['Bebas_Neue'] text-[#D8D8D8] mb-2">COMPOSITIONS</h3>
+                <p class="text-[#D8D8D8] mb-4">Apprenez les meilleures compos pour dominer les arènes.</p>
+                <a href="#compositions" class="inline-block btn-orange text-[#23272A] px-4 py-2 rounded-md">VOIR LES COMPOS</a>
+              </div>
+              <div class="card-bg rounded-xl p-6 shadow-lg hover:neon-glow transition duration-300 text-center">
+                <h3 class="text-xl font-['Bebas_Neue'] text-[#D8D8D8] mb-2">BUILD & PERKS</h3>
+                <p class="text-[#D8D8D8] mb-4">Découvrez les builds optimaux pour chaque héros.</p>
+                <a href="#builds" class="inline-block btn-orange text-[#23272A] px-4 py-2 rounded-md">VOIR LES BUILDS</a>
+              </div>
+              <div class="card-bg rounded-xl p-6 shadow-lg hover:neon-glow transition duration-300 text-center">
+                <h3 class="text-xl font-['Bebas_Neue'] text-[#D8D8D8] mb-2"><i class="fa-solid fa-lightbulb mr-2 text-[#FFA000]"></i>CONSEILS</h3>
+                <p class="text-[#D8D8D8] mb-4">Stratégies pour optimiser vos Stadium Cash et vos builds.</p>
+                <a href="#conseils" class="inline-block btn-orange text-[#23272A] px-4 py-2 rounded-md">VOIR LES CONSEILS</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section Héros disponibles au lancement -->
+          <section id="heroes-launch" class="mb-16">
+            <h2 class="text-3xl font-['Bebas_Neue'] text-[#FFA000] neon-text mb-8 text-center section-title">HÉROS DISPONIBLES AU LANCEMENT</h2>
+            <div class="flex flex-col items-center">
+              <img src="/images/heroes-launch.jpg" alt="Héros disponibles au lancement Overwatch 2" class="rounded-xl shadow-lg max-w-full" style="max-width:900px;">
+              <p class="text-[#A9B8BB] text-sm mt-4 text-center">Découvrez la liste complète des héros jouables dès la sortie du mode Stadium.</p>
+            </div>
+          </section>
+
+          <!-- Héros Méta (3 héros) -->
+          <section id="heroes" class="mb-16">
+            <h2 class="text-3xl font-['Bebas_Neue'] text-[#FFA000] neon-text mb-8 text-center section-title">HÉROS MÉTA EN AVANT</h2>
+            <div class="py-12">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition duration-300 card-bg flex flex-col">
+                  <img src="/images/PERSO_FULL/soldier76.png" alt="Soldier: 76" class="w-full h-72 object-contain bg-gray-900">
+                  <div class="p-6 flex-1 flex flex-col justify-between">
+                    <h3 class="text-2xl font-semibold text-white mb-2 flex items-center"><i class="fa-solid fa-crosshairs mr-2 text-yellow-400"></i>Soldier: 76 (DPS)</h3>
+                    <p class="text-gray-300 mb-4">Build <strong>Helix Rocket Burst</strong> : Spam des roquettes pour des dégâts de zone massifs.</p>
+                    <a href="/heroes/soldier76" class="inline-block btn-orange text-gray-900 px-4 py-2 rounded-md hover:bg-yellow-300 transition">Détails</a>
+                  </div>
+                </div>
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition duration-300 card-bg flex flex-col">
+                  <img src="/images/PERSO_FULL/junkerqueen.png" alt="Junker Queen" class="w-full h-72 object-contain bg-gray-900">
+                  <div class="p-6 flex-1 flex flex-col justify-between">
+                    <h3 class="text-2xl font-semibold text-white mb-2 flex items-center"><i class="fa-solid fa-axe mr-2 text-yellow-400"></i>Junker Queen (Tank)</h3>
+                    <p class="text-gray-300 mb-4">Build <strong>Carnage Sustain</strong> : Sustain infinie avec saignements massifs.</p>
+                    <a href="/heroes/junkerqueen" class="inline-block btn-orange text-gray-900 px-4 py-2 rounded-md hover:bg-yellow-300 transition">Détails</a>
+                  </div>
+                </div>
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition duration-300 card-bg flex flex-col">
+                  <img src="/images/PERSO_FULL/juno.png" alt="Juno" class="w-full h-72 object-contain bg-gray-900">
+                  <div class="p-6 flex-1 flex flex-col justify-between">
+                    <h3 class="text-2xl font-semibold text-white mb-2 flex items-center"><i class="fa-solid fa-rocket mr-2 text-yellow-400"></i>Juno (Support)</h3>
+                    <p class="text-gray-300 mb-4">Build <strong>Pulsar Torpedoes</strong> : Spam de torpilles pour pression et soins à distance.</p>
+                    <a href="/heroes/juno" class="inline-block btn-orange text-gray-900 px-4 py-2 rounded-md hover:bg-yellow-300 transition">Détails</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Compositions -->
+          <section id="compositions" class="mb-16">
+            <h2 class="text-3xl font-['Bebas_Neue'] text-[#FFA000] neon-text mb-8 text-center section-title">COMPOSITIONS MÉTA</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="card-bg rounded-xl p-6 shadow-lg hover:neon-glow transition duration-300">
+                <h3 class="text-xl font-['Bebas_Neue'] text-[#D8D8D8] mb-2">DIVE RAPIDE</h3>
+                <p class="text-[#D8D8D8] mb-4">Junker Queen + Soldier: 76 + Juno + Moira : Plongez avec des perks de mobilité et des burst damages pour des éliminations rapides.</p>
+                <a href="/compositions/dive" class="text-[#FFA000] hover:text-[#FFCB47] transition">DÉTAILS</a>
+              </div>
+              <div class="card-bg rounded-xl p-6 shadow-lg hover:neon-glow transition duration-300">
+                <h3 class="text-xl font-['Bebas_Neue'] text-[#D8D8D8] mb-2">CONTRÔLE SOLIDE</h3>
+                <p class="text-[#D8D8D8] mb-4">Orisa + Reinhardt + Ashe + Juno + Ana : Tenez les objectifs avec des perks défensifs, des soins massifs et des dégâts à distance.</p>
+                <a href="/compositions/controle" class="text-[#FFA000] hover:text-[#FFCB47] transition">DÉTAILS</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Conseils -->
+          <section id="conseils" class="mb-16">
+            <h2 class="text-3xl font-['Bebas_Neue'] text-[#FFA000] neon-text mb-8 text-center section-title">CONSEILS POUR EXCELLER</h2>
+            <div class="card-bg rounded-xl p-8 shadow-lg">
+              <ul class="text-[#D8D8D8] space-y-4">
+                <li><strong>Optimisez vos Stadium Cash</strong> : Achetez des Powers qui renforcent votre rôle (Weapon Power pour DPS, Ability Power pour tanks/supports).</li>
+                <li><strong>Adaptez-vous à l’ennemi</strong> : Contre des compos tanky, privilégiez des builds de brûlure (Ashe, Soldier: 76). Contre des DPS mobiles, optez pour du contrôle (Orisa, Junker Queen).</li>
+                <li><strong>Gérez les rounds</strong> : Économisez du Cash pour des perks épiques en late-game, surtout si vous visez un comeback.</li>
+                <li><strong>Coordination</strong> : Communiquez pour aligner vos builds avec la compo (ex. : dive avec Junker Queen + Juno).</li>
+              </ul>
+              <div class="text-center mt-6">
+                <a href="/conseils" class="inline-block btn-orange text-[#23272A] px-6 py-3 rounded-md font-['Bebas_Neue'] text-lg">PLUS DE CONSEILS</a>
+              </div>
+            </div>
+          </section>
+        </div>
+        <aside class="hidden lg:block w-80 flex-shrink-0">
+          <div class="card-bg rounded-xl p-6 shadow-lg">
+            <h3 class="text-xl font-['Bebas_Neue'] text-[#FFA000] neon-text mb-4 text-center">SPONSOR</h3>
+            <div class="sidebar-ad">
+              <a href="https://www.overwatch.com" target="_blank">
+                <img src="/images/ad-placeholder.jpg" alt="Publicité Overwatch 2" class="w-full h-auto rounded-md">
+              </a>
+              <p class="text-[#A9B8BB] text-sm mt-2 text-center">Rejoignez l’action dans Overwatch 2 !</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="footer mt-12">
+      <div class="container mx-auto px-4 text-center text-[#A9B8BB]">
+        <p class="mb-4"> 2025 Stadium Meta. Créé pour les fans d'Overwatch 2.</p>
+        <div class="flex justify-center gap-6">
+          <a href="#" class="hover:text-[#FFA000] transition"><i class="fab fa-twitter"></i> Twitter</a>
+          <a href="#" class="hover:text-[#FFA000] transition"><i class="fab fa-discord"></i> Discord</a>
+          <a href="#" class="hover:text-[#FFA000] transition"><i class="fab fa-youtube"></i> YouTube</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</MainLayout>

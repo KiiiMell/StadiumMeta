@@ -1,0 +1,167 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout>
+  <section class="hero-section hero-section-center-flex">
+    <div class="build-title-row">
+      <img src="/images/ICONES_PERSO/Icon-Genji.png" alt="Genji" class="build-logo-orisa" />
+      <span class="build-title-main">Build Genji</span>
+    </div>
+    <span class="build-title-secondary">DPS - Build personnalisé</span>
+  </section>
+  <main class="dva-build-main-small">
+    <div class="dva-build-center">
+      <section class="dva-build-block">
+        <header class="dva-build-header-small">
+        </header>
+        <div class="dva-build-cards">
+          <div class="dva-group-card">
+            <div class="dva-group-title dva-group-title-hover">
+              Pouvoirs (4/4)
+              <div class="dva-perks-popup" style="display:block;position:static;box-shadow:none;border:none;padding:0;background:none;min-width:unset;width:auto;">
+                <div class="dva-perks-row">
+                  <div class="perk-mini"><img src="/images/PERKS/GENJI/PUISSANCE/LAME_DISSIMULEE.png" alt="Lame Dissimulée" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/GENJI/PUISSANCE/SOINS_D'HANAMURA.png" alt="Soins d'Hanamura" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/GENJI/PUISSANCE/FORGE_SOUS_LE_FEU.png" alt="Forge sous le feu" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/GENJI/PUISSANCE/ESPRIT_DE_SOJIRO.png" alt="Esprit de Sojiro" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dva-group-card">
+            <div class="dva-group-title dva-group-title-hover">
+              Objets (6/6)
+              <div class="dva-perks-popup" style="display:block;position:static;box-shadow:none;border:none;padding:0;background:none;min-width:unset;width:auto;">
+                <div class="dva-perks-row" style="grid-template-columns: repeat(3, 1fr);">
+                  <div class="perk-mini"><img src="/images/PERKS/GENJI/ARME/EPIQUE/OPTIQUE_D'EMBUSCADE.png" alt="Optique d'Embuscade" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/GENJI/SURVIE/EPIQUE/CATALYSEUR_NEBULEUX.png" alt="Catalyseur Nébuleux" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/GENJI/SURVIE/EPIQUE/GANTELET_SINISTRE.png" alt="Gantelet Sinistre" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/GENJI/ARME/EPIQUE/CLOU_DU_SPECTACLE.png" alt="Clou du Spectacle" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/GENJI/SURVIE/EPIQUE/TRANSFERT_DELTA.png" alt="Transfert Delta" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/GENJI/ARME/RARE/IMPLANT_DE_LA_GRIFFE.png" alt="Implant de la Griffe" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&display=swap');
+    .build-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 32px 0 8px 0;
+      gap: 12px;
+    }
+    .build-logo-orisa {
+      width: 38px;
+      height: 38px;
+      filter: drop-shadow(0 0 6px #2196F3aa) drop-shadow(0 0 8px #FFA00088);
+      vertical-align: middle;
+    }
+    .build-title-main {
+      font-size: 2rem;
+      font-family: 'Bebas Neue', Arial, sans-serif;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #FFA000 !important;
+      text-shadow: 0 2px 10px #2196F399, 0 0px 14px #FFA00077;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0 4px;
+      line-height: 1;
+      display: inline-block;
+    }
+    .dva-build-main-small {
+      background: #161d26;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 2.5rem;
+    }
+    .dva-build-center {
+      width: 650px;
+      max-width: 98vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .dva-build-block {
+      width: 100%;
+      background: none;
+      margin-bottom: 170px;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px #00eaff11;
+      padding-bottom: 0.5rem;
+      min-width: 0;
+      overflow: visible;
+      position: relative;
+    }
+    .dva-build-cards {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 1.1rem;
+      justify-content: center;
+      min-width: 0;
+      overflow: visible;
+      position: relative;
+    }
+    .dva-group-card {
+      background: #232b36;
+      border-radius: 14px;
+      box-shadow: 0 2px 10px #00eaff33;
+      padding: 0.8rem 0.6rem 0.7rem 0.6rem;
+      width: 280px;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1.5px solid #3cefff33;
+      position: relative;
+      justify-content: center;
+      min-height: 48px;
+      margin: 0;
+      overflow: visible;
+    }
+    .dva-group-title {
+      flex: 1;
+      text-align: center;
+    }
+    .dva-perks-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      justify-items: center;
+    }
+    .dva-group-card:last-child .dva-perks-row {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .perk-mini {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #181f25;
+      border-radius: 10px;
+      box-shadow: 0 0 8px #00eaff44;
+      border: 2px solid #00eaff33;
+      overflow: hidden;
+    }
+    .perk-mini img {
+      width: 48px;
+      height: 48px;
+      padding: 6px;
+      object-fit: contain;
+      background: transparent;
+      box-sizing: content-box;
+      display: block;
+    }
+  </style>
+</MainLayout>

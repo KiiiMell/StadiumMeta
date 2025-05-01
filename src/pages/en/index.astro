@@ -1,0 +1,116 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout>
+  <!-- Elegant background and responsive structure -->
+  <div class="min-h-screen bg-gradient-to-br from-[#181c22] via-[#23272A] to-[#1a232e] text-[#D8D8D8] font-['Inter']">
+    <!-- Required fonts and CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Main layout: responsive grid -->
+    <main class="container mx-auto px-4 py-12">
+      <div class="w-full max-w-4xl mx-auto">
+        <!-- Introduction -->
+        <section class="mb-16 text-center">
+          <h2 class="text-4xl font-['Bebas_Neue'] text-[#FFA000] neon-text mb-4 section-title">WELCOME TO STADIUM META</h2>
+          <p class="text-[#D8D8D8] max-w-2xl mx-auto text-lg">
+            Discover Overwatch 2's new Stadium mode! A unique competitive mode where every round counts. Earn Stadium Cash to buy Powers and Items, and adapt your builds to crush your opponents. Jump into the arena!
+          </p>
+          <a href="/en/heroes" class="mt-6 inline-block btn-orange text-[#23272A] px-6 py-3 rounded-md font-['Bebas_Neue'] text-lg">DISCOVER META HEROES</a>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-12">
+      <div class="container mx-auto px-4 text-center text-[#A9B8BB]">
+        <p class="mb-4">© 2025 Stadium Meta. Created for Overwatch 2 fans.</p>
+        <div class="flex justify-center gap-6">
+          <a href="#" class="hover:text-[#FFA000] transition"><i class="fab fa-twitter"></i> Twitter</a>
+          <a href="#" class="hover:text-[#FFA000] transition"><i class="fab fa-discord"></i> Discord</a>
+          <a href="#" class="hover:text-[#FFA000] transition"><i class="fab fa-youtube"></i> YouTube</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</MainLayout>
+
+<style>
+.hero-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  background: rgba(24, 28, 34, 0.97);
+  border: 2px solid rgba(255, 160, 0, 0.3);
+  border-radius: 18px;
+  padding: 3rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 16px rgba(255, 160, 0, 0.2);
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  color: #FFA000;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(255, 160, 0, 0.5),
+               0 0 20px rgba(255, 160, 0, 0.3),
+               0 0 30px rgba(255, 160, 0, 0.2);
+}
+
+.hero-desc {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #e6e6e6;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: #FFA000;
+  color: #23272A;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  padding: 0.8em 2.5em;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #FFB333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 160, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+
+  .hero-content {
+    padding: 2rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-desc {
+    font-size: 1.1rem;
+  }
+
+  .hero-btn {
+    font-size: 1.1rem;
+    padding: 0.6em 2em;
+  }
+}
+</style> 

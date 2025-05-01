@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "heroes": "Meta Heroes",
+    "compositions": "Compositions",
+    "builds": "Builds & Perks",
+    "tips": "Tips",
+    "propose_build": "Submit Build",
+    "community_builds": "Community Builds"
+  },
+  "home": {
+    "welcome": "WELCOME TO STADIUM META",
+    "discover": "Discover the new Stadium mode",
+    "description": "A unique competitive mode where every round counts, with custom builds, strategic perks, and Stadium Cash management to dominate the arena.",
+    "cta_button": "DISCOVER META HEROES"
+  },
+  "roles": {
+    "tank": "TANKS",
+    "damage": "DAMAGE",
+    "support": "SUPPORT"
+  },
+  "footer": {
+    "created_for": "Created for Overwatch 2 fans",
+    "follow_us": "Follow us"
+  }
+} 

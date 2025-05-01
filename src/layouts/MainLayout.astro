@@ -1,0 +1,181 @@
+---
+import Header from '../components/Header.astro';
+import { supabase } from '../supabaseClient.js';
+import Navigation from '../components/Navigation';
+import NavAuth from '../components/NavAuth.jsx';
+import LanguageSelector from '../components/LanguageSelector.jsx';
+---
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stadium Meta</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/css/navigation.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Bebas+Neue&family=Montserrat:wght@900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/svg+xml" href="/logo-meta.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <style>
+      html, body {
+        background: linear-gradient(135deg, #131a24 60%, #23272a 100%);
+        color: #fff;
+        font-family: 'Open Sans', Arial, sans-serif;
+        min-height: 100vh;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        width: 100%;
+        background: linear-gradient(315deg, #23272a 0%, #181c22 55%, #0D2240 85%, #2196F3 100%);
+        border-bottom: none;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        height: 68px;
+        position: relative;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 4px 18px #0008, 0 8px 0 0 #FFA00033;
+        backdrop-filter: blur(10px) saturate(160%);
+      }
+
+      .header-inner {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        position: relative;
+        padding: 0 32px;
+      }
+
+      .nav-left {
+        position: absolute;
+        left: 32px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+      }
+
+      .nav-right {
+        position: absolute;
+        right: 32px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+      }
+
+      .site-title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(calc(-50% - 50px), -50%);
+        font-family: 'Montserrat', 'Arial Black', Arial, sans-serif;
+        font-size: 2.3rem;
+        font-weight: 900;
+        color: #FFA000;
+        text-decoration: none;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        text-shadow: 0 2px 14px #2196F3cc, 0 0px 24px #2196F399, 0 0 0.5px #2196F3;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        z-index: 1;
+      }
+
+      .site-title img {
+        width: 36px;
+        height: 36px;
+        margin-bottom: -2px;
+        vertical-align: middle;
+      }
+
+      .site-title:hover {
+        opacity: 0.88;
+      }
+
+      .header-glow {
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 12px;
+        pointer-events: none;
+        z-index: 11;
+        background: radial-gradient(ellipse at center, #FFA00099 0%, #2196F3 60%, transparent 100%);
+        opacity: 0.9;
+        filter: blur(2.5px);
+      }
+
+      .header-glow-line {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3.5px;
+        background: linear-gradient(90deg, #2196F3 0%, #FFA000 100%);
+        box-shadow: 0 2px 16px #2196F399, 0 1px 8px #FFA00055;
+        opacity: 0.95;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar-ad left">
+      <div class="ad-placeholder">Publicité</div>
+    </div>
+    
+    <header>
+      <div class="header-inner">
+        <div class="nav-left">
+          <Navigation client:only="react" />
+        </div>
+        <a href="/" class="site-title">
+          STADIUM
+          <img src="/logo-meta.svg" alt="Logo Stadium Meta" />
+          META
+        </a>
+        <div class="nav-right">
+          <LanguageSelector client:only="react" />
+          <a href="/login" class="login-link">LOGIN</a>
+        </div>
+      </div>
+      <div class="header-glow"></div>
+      <div class="header-glow-line"></div>
+    </header>
+
+    <main>
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+
+    <div class="sidebar-ad right">
+      <div class="ad-placeholder">Publicité</div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61575799262881" target="_blank" rel="noopener" aria-label="Facebook">
+          <img src="/images/social/logo_Facebook.webp" alt="Facebook" width="28" height="28" />
+        </a>
+        <a href="https://www.instagram.com/stadiummetaow/" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="/images/social/logo%20insta.webp" alt="Instagram" width="28" height="28" />
+        </a>
+        <a href="https://x.com/StadiumMetaOW" target="_blank" rel="noopener" aria-label="Twitter">
+          <img src="/images/social/x_logo_PNG16.webp" alt="X" width="28" height="28" />
+        </a>
+        <a href="https://discord.gg/MQK3StG4RF" target="_blank" rel="noopener" aria-label="Discord">
+          <img src="/images/social/1708701266discord-logo-transparent.webp" alt="Discord" width="28" height="28" />
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

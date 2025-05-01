@@ -1,0 +1,182 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout>
+  <main class="dva-build-main-small">
+    <div class="dva-build-center">
+      <section class="dva-build-block">
+        <header class="dva-build-header-small">
+          <img src="/images/ICONES_PERSO/Icon-Ashe.png" alt="Ashe" class="dva-avatar-small" />
+          <div>
+            <h1 class="dva-title-small">Build Ashe <span>Dégâts de dynamite + temps de CD réduit</span></h1>
+            <p class="dva-desc-small">Build axée sur les dégâts de dynamite et le temps de rechargement de compétence. Réduit les soins reçus aux ennemis.</p>
+          </div>
+        </header>
+        <div class="dva-build-cards">
+          <div class="dva-group-card">
+            <div class="dva-group-title dva-group-title-hover">
+              Perks Puissance (4/4)
+              <div class="dva-perks-popup" style="display:block;position:static;box-shadow:none;border:none;padding:0;background:none;min-width:unset;width:auto;">
+                <div class="dva-perks-row">
+                  <div class="perk-mini"><img src="/images/PERKS/ASHE/PUISSANCE/DETONATION_PRECOCE.png" alt="Détonation Précoce" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/ASHE/PUISSANCE/B.O.B._JR..png" alt="B.O.B. Jr." /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/ASHE/PUISSANCE/MON_PLAN,_MES_REGLES.png" alt="Mon Plan, Mes Règles" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/ASHE/PUISSANCE/FINAL_EXPLOSIF.png" alt="Final Explosif" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dva-group-card">
+            <div class="dva-group-title dva-group-title-hover">
+              Perks Utilitaires (6/6)
+              <div class="dva-perks-popup" style="display:block;position:static;box-shadow:none;border:none;padding:0;background:none;min-width:unset;width:auto;">
+                <div class="dva-perks-row" style="grid-template-columns: repeat(3, 1fr);">
+                  <div class="perk-mini"><img src="/images/PERKS/ASHE/CAPACITE/EPIQUE/BATONS_CHARGES.png" alt="Bâtons Chargés" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/ASHE/CAPACITE/RARE/PYROMANE_ARGENTEE.png" alt="Pyromane Argentée" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/ASHE/CAPACITE/EPIQUE/ARSENAL_HEROIQUE.png" alt="Arsenal Héroïque" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/ASHE/CAPACITE/EPIQUE/IRIS_IRISE.png" alt="Iris Irisé" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/ASHE/CAPACITE/EPIQUE/LUNETTES_INFRAROUGES.png" alt="Lunettes Infrarouges" /></div>
+                  <div class="perk-mini"><img src="/images/PERKS/ASHE/CAPACITE/EPIQUE/CYBERVENIN.png" alt="Cybervenin" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&display=swap');
+    .dva-build-main-small {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .dva-build-center {
+      max-width: 1200px;
+      width: 100%;
+    }
+    .dva-build-block {
+      width: 100%;
+      background: none;
+      margin-bottom: 170px;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px #00eaff11;
+      padding-bottom: 0.5rem;
+      min-width: 0;
+      overflow: visible;
+      position: relative;
+    }
+    .dva-build-header-small {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 32px 0 8px 0;
+      gap: 12px;
+    }
+    .dva-avatar-small {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #00eaff77;
+      border: 2px solid #FFD700;
+      background: #111a;
+      object-fit: cover;
+      display: block;
+    }
+    .dva-title-small {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.1rem;
+      letter-spacing: 1px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      text-transform: none;
+    }
+    .dva-title-small span {
+      color: #00eaff;
+      font-size: 1.07rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin-left: 7px;
+      text-transform: none;
+    }
+    .dva-desc-small {
+      color: #b3c6e0;
+      font-size: 0.97rem;
+      margin-top: 0.1rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      text-align: left;
+    }
+    .dva-build-cards {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 1.1rem;
+      justify-content: center;
+      min-width: 0;
+      overflow: visible;
+      position: relative;
+    }
+    .dva-group-card {
+      background: #232b36;
+      border-radius: 14px;
+      box-shadow: 0 2px 10px #00eaff33;
+      padding: 0.8rem 0.6rem 0.7rem 0.6rem;
+      width: 280px;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1.5px solid #3cefff33;
+      position: relative;
+      justify-content: center;
+      min-height: 48px;
+      margin: 0;
+      overflow: visible;
+    }
+    .dva-group-title {
+      flex: 1;
+      text-align: center;
+    }
+    .dva-perks-popup {
+      display: block;
+      position: static;
+      box-shadow: none;
+      border: none;
+      padding: 0;
+      background: none;
+      min-width: unset;
+      width: auto;
+    }
+    .dva-perks-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      justify-items: center;
+    }
+    .perk-mini {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #181f25;
+      border-radius: 10px;
+      box-shadow: 0 0 8px #00eaff44;
+      border: 2px solid #00eaff33;
+      overflow: hidden;
+    }
+    .perk-mini img {
+      width: 48px;
+      height: 48px;
+      padding: 6px;
+      object-fit: contain;
+      background: transparent;
+      box-sizing: content-box;
+      display: block;
+    }
+  </style>
+</MainLayout>

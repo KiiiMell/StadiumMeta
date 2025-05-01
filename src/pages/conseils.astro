@@ -1,0 +1,54 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout>
+  <!-- En-tête Sticky -->
+  <header class="bg-[#23272A] backdrop-blur-sm sticky top-0 z-50 shadow-md" role="banner">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1>
+        <a href="./index_fr.html" class="text-3xl font-['Bebas_Neue'] text-[#FFA000] neon-text hover:text-[#FFCB47] transition section-title" style="padding:0.2em 1.2em; border:2.5px solid #4DE1FF; border-radius:0.5em; background:rgba(20,24,28,0.82); box-shadow:0 0 12px #4DE1FF66,0 0 2px #FFA00044;">STADIUM META</a>
+      </h1>
+      <button onclick="toggleMenu()" class="md:hidden text-[#D8D8D8] focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      <nav id="nav-menu" class="hidden md:flex md:items-center" role="navigation" aria-label="Menu principal">
+        <ul class="flex flex-col md:flex-row gap-4 md:gap-8 p-4 md:p-0">
+          <li><a href="heroes_fr.html" class="text-[#D8D8D8] hover:text-[#FFA000] hover:underline transition">Héros Méta</a></li>
+          <li><a href="#compositions" class="text-[#D8D8D8] hover:text-[#FFA000] hover:underline transition">Compositions</a></li>
+          <li><a href="#conseils" class="text-[#D8D8D8] hover:text-[#FFA000] hover:underline transition">Conseils</a></li>
+        </ul>
+      </nav>
+      <select onchange="window.location.href=this.value" class="bg-[#23272A] text-[#D8D8D8] p-2 rounded-md focus:outline-none">
+        <option value="index_fr.html" selected>Français</option>
+      </select>
+    </div>
+  </header>
+
+  <section class="p-8">
+    <h2 class="text-3xl font-semibold mb-6 section-title">Conseils et Astuces</h2>
+    <img src="/images/Icones_perso/Icon-Soldier_76.png" alt="Soldier: 76">
+    <img src="/images/Icones_perso/Icon-Junker_Queen.png" alt="Junker Queen">
+    <img src="/images/Icones_perso/Icon-Juno.png" alt="Juno">
+    <img src="/images/Icones_perso/Icon-Orisa.png" alt="Orisa">
+    <img src="/images/Icones_perso/Icon-Reinhardt.png" alt="Reinhardt">
+    <img src="/images/Icones_perso/Icon-Moira.png" alt="Moira">
+    <img src="/images/Icones_perso/Icon-Ana.png" alt="Ana">
+    <img src="/images/Icones_perso/Icon-Ashe.png" alt="Ashe">
+    <img src="/images/Icones_perso/Icon-Cassidy.png" alt="Cassidy">
+    <img src="/images/Icones_perso/Icon-D.Va.png" alt="D.Va">
+    <img src="/images/Icones_perso/Icon-Genji.png" alt="Genji">
+    <img src="/images/Icones_perso/Icon-L3Fcio.png" alt="Lúcio">
+    <img src="/images/Icones_perso/Icon-Mei.png" alt="Mei">
+    <img src="/images/Icones_perso/Icon-Mercy.png" alt="Mercy">
+    <img src="/images/Icones_perso/Icon-Reaper.png" alt="Reaper">
+    <img src="/images/Icones_perso/Icon-Zarya.png" alt="Zarya">
+    <img src="/images/Icones_perso/Icon-kiriko.png" alt="Kiriko">
+    <p>Page en construction...</p>
+  </section>
+
+  <footer class="footer p-6">
+    &copy; 2025 Stadium Meta
+  </footer>
+</MainLayout>

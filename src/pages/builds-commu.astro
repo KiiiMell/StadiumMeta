@@ -1,0 +1,151 @@
+---
+// Page d’affichage des builds communautaires
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout>
+  <section class="commu-header">
+    <img src="/logo-meta.svg" alt="Logo Stadium Meta" class="commu-icon" />
+    <h1 class="commu-title">Builds communautaires</h1>
+    <p class="commu-desc">Découvrez les builds proposés par la communauté Stadium Meta&nbsp;!<br>Partagez aussi le vôtre.</p>
+  </section>
+  <main class="commu-main-bg">
+    <div class="build-list" id="buildList">
+      <!-- Les builds seront injectés ici -->
+    </div>
+  </main>
+  <style>
+    .commu-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    .commu-icon {
+      width: 58px;
+      height: 58px;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 0 12px #00eaff88);
+    }
+    .commu-title {
+      font-family: 'Bebas Neue', Arial, sans-serif;
+      font-size: 2.4rem;
+      color: #FFA000;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 14px #2196F3aa, 0 0px 14px #FFA00077;
+      margin: 0 0 6px 0;
+      text-align: center;
+    }
+    .commu-desc {
+      color: #b9b9b9;
+      font-size: 1.13rem;
+      margin: 0 0 12px 0;
+      text-align: center;
+    }
+    .commu-main-bg {
+      background: linear-gradient(120deg, #181d26 70%, #232b36 100%);
+      min-height: 70vh;
+      padding-bottom: 60px;
+    }
+    .build-list {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .build-card {
+      background: rgba(24,28,34,0.97);
+      border-radius: 18px;
+      border: 2px solid #2196F3;
+      box-shadow: 0 4px 22px #00eaff33, 0 1.5px 9px #FFA00022;
+      padding: 22px 22px 16px 22px;
+      min-width: 0;
+      color: #fff;
+      transition: transform 0.18s, box-shadow 0.18s;
+      position: relative;
+      overflow: hidden;
+    }
+    .build-card:hover {
+      transform: translateY(-4px) scale(1.012);
+      box-shadow: 0 8px 42px #00eaff77, 0 2.5px 18px #FFA00055;
+      border-color: #FFA000;
+    }
+    .build-card h3 {
+      color: #FFA000;
+      margin-bottom: 8px;
+      font-size: 1.45em;
+      font-family: 'Bebas Neue', Arial, sans-serif;
+      letter-spacing: 1.2px;
+    }
+    .build-card .hero {
+      font-weight: bold;
+      color: #2196F3;
+      font-size: 1.07em;
+      margin-bottom: 3px;
+    }
+    .build-card .auteur {
+      color: #aaa;
+      font-size: 0.99em;
+      margin-bottom: 6px;
+    }
+    .build-card .date {
+      color: #888;
+      font-size: 0.93em;
+      margin-bottom: 7px;
+    }
+    .build-card .description {
+      margin: 14px 0 0 0;
+      font-size: 1.14em;
+      color: #e3e3e3;
+    }
+    .build-card .details {
+      margin-top: 12px;
+      font-size: 1.01em;
+      color: #ffd54f;
+    }
+    .no-builds-msg {
+      color: #b9b9b9;
+      font-size: 1.18em;
+      text-align: center;
+      margin: 30px 0 0 0;
+    }
+    @media (max-width: 700px) {
+      .build-list {
+        padding: 0 2vw;
+      }
+      .build-card {
+        padding: 16px 8px 10px 8px;
+      }
+      .commu-title {
+        font-size: 1.45rem;
+      }
+    }
+  </style>
+  <script>
+    async function fetchBuilds() {
+      const res = await fetch('http://localhost:4000/api/builds');
+      const builds = await res.json();
+      const container = document.getElementById('buildList');
+      container.innerHTML = '';
+      if (!builds.length) {
+        container.innerHTML = '<div class="no-builds-msg">Aucun build communautaire pour l’instant.<br>Proposez le vôtre !</div>';
+        return;
+      }
+      builds.forEach(b => {
+        const card = document.createElement('div');
+        card.className = 'build-card';
+        card.innerHTML = `
+          <h3>${b.titre}</h3>
+          <div class="hero">${b.hero}</div>
+          <div class="auteur">${b.auteur ? 'Par ' + b.auteur : ''}</div>
+          <div class="date">${new Date(b.date).toLocaleString('fr-FR')}</div>
+          <div class="description">${b.description}</div>
+          ${b.details ? `<div class="details">${b.details}</div>` : ''}
+        `;
+        container.appendChild(card);
+      });
+    }
+    fetchBuilds();
+  </script>
+</MainLayout>
