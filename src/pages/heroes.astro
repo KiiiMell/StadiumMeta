@@ -16,15 +16,15 @@ import MainLayout from '../layouts/MainLayout.astro';
   <div class="container" style="margin-top: 0; padding-top: 0;">
     <main style="margin-top: 0; padding-top: 0;">
       <div class="category-links" style="margin-top: 0;">
-        <a href="tank_fr.html" class="category-link tank-link" onclick="playUIClick()">
+        <a href="/fr/tank" class="category-link tank-link" onclick="playUIClick()">
           <img src="/images/ICONES_ROLES/Dark_Circle_Tank.png" alt="Tanks" class="role-logo"/>
           TANKS
         </a>
-        <a href="degat_fr.html" class="category-link damage-link" onclick="playUIClick()">
+        <a href="/fr/damage" class="category-link damage-link" onclick="playUIClick()">
           <img src="/images/ICONES_ROLES/Dark_Circle_Damage.png" alt="Dégâts" class="role-logo"/>
           DÉGÂTS
         </a>
-        <a href="soutien_fr.html" class="category-link support-link" onclick="playUIClick()">
+        <a href="/fr/support" class="category-link support-link" onclick="playUIClick()">
           <img src="/images/ICONES_ROLES/Dark_Circle_Support.png" alt="Soutien" class="role-logo"/>
           SOUTIEN
         </a>
@@ -32,7 +32,7 @@ import MainLayout from '../layouts/MainLayout.astro';
       <audio id="uiClickSound" src="/sounds/ui_click.mp3" preload="auto"></audio>
       <script>
         function playUIClick() {
-          const audio = document.getElementById('uiClickSound');
+          const audio = document.getElementById('uiClickSound') as HTMLAudioElement;
           if(audio) {
             audio.currentTime = 0;
             audio.volume = 0.19;
